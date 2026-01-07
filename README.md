@@ -142,10 +142,3 @@ N'hésite pas à expérimenter avec le code :
 3. Ajoute la persistance des données (shared_preferences, sqflite)
 4. Implémente l'internationalisation (support multilingue)
 
-## Licence
-
-Projet éducatif - Libre d'utilisation et de modification.
-
----
-
-Bon apprentissage Flutter !
