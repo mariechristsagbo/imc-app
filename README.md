@@ -1,8 +1,8 @@
-# 📱 Application Calculateur d'IMC (BMI Calculator)
+# Application Calculateur d'IMC (BMI Calculator)
 
 Application Flutter pour calculer l'Indice de Masse Corporelle (IMC/BMI) avec une interface moderne et intuitive.
 
-## 📸 Captures d'écran
+## Captures d'écran
 
 L'application comprend deux écrans principaux :
 1. **Écran de saisie** : Sélection du sexe, taille (slider), poids et âge (compteurs)
@@ -11,20 +11,20 @@ L'application comprend deux écrans principaux :
 ![alt text](image-2.png)
 ![alt text](image-1.png)
 
-## 🎯 Fonctionnalités
+## Fonctionnalités
 
-- ✅ Sélection du sexe (Homme/Femme)
-- ✅ Slider interactif pour la taille (120-220 cm)
-- ✅ Compteurs +/- pour le poids (30-200 kg) et l'âge (10-100 ans)
-- ✅ Calcul automatique de l'IMC selon la formule : **IMC = poids(kg) / taille²(m)**
-- ✅ Interprétation du résultat :
-  - **IMC ≤ 18.5** : Sous-poids (bleu)
-  - **18.5 < IMC < 25** : Poids normal (vert)
-  - **IMC ≥ 25** : Surpoids (orange)
-- ✅ Navigation fluide entre les écrans
-- ✅ Design moderne avec thème sombre
+- Sélection du sexe (Homme/Femme)
+- Slider interactif pour la taille (120-220 cm)
+- Compteurs +/- pour le poids (30-200 kg) et l'âge (10-100 ans)
+- Calcul automatique de l'IMC selon la formule : **IMC = poids(kg) / taille²(m)**
+- Interprétation du résultat :
+   - **IMC ≤ 18.5** : Sous-poids (bleu)
+   - **18.5 < IMC < 25** : Poids normal (vert)
+   - **IMC ≥ 25** : Surpoids (orange)
+- Navigation fluide entre les écrans
+- Design moderne avec thème sombre
 
-## 🏗️ Architecture du projet
+## Architecture du projet
 
 ```
 lib/
@@ -43,7 +43,7 @@ lib/
     └── constants.dart          # Constantes (couleurs, styles)
 ```
 
-## 📚 Concepts Flutter explorés
+## Concepts Flutter explorés
 
 ### 1. **Widgets de base**
 - `StatelessWidget` : Widget immuable (ne change pas)
@@ -86,7 +86,7 @@ lib/
 - **Screens** : Pages complètes de l'application
 - **Utils** : Constantes et helpers
 
-## 🚀 Installation et lancement
+## Installation et lancement
 
 ### Prérequis
 - Flutter SDK ≥ 3.10.1
@@ -129,20 +129,20 @@ lib/
    - Appuyez sur `R` pour un restart complet
    - Appuyez sur `q` pour quitter
 
-## 🧪 Tests
+## Tests
 
 Lancer les tests unitaires et widget :
 ```bash
 flutter test
 ```
 
-## 📦 Dépendances
+## Dépendances
 
 - `flutter` : Framework Flutter
 - `cupertino_icons` : Icônes iOS
 - `font_awesome_flutter` : Icônes Font Awesome (symboles ♂️ ♀️ et +/-)
 
-## 🎨 Personnalisation
+## Personnalisation
 
 ### Modifier les couleurs
 Éditez `lib/utils/constants.dart` :
@@ -158,7 +158,7 @@ const double kMaxHeight = 220.0;  // Taille maximale
 const int kMinWeight = 30;        // Poids minimal
 ```
 
-## 🐛 Débogage courant
+## Débogage courant
 
 ### Problème : "Multiple Dart VM instances..."
 **Solution** : Arrêtez tous les processus Flutter en cours (`q` dans tous les terminaux).
@@ -169,14 +169,14 @@ const int kMinWeight = 30;        // Poids minimal
 ### Problème : Hot reload ne fonctionne pas
 **Solution** : Utilisez Hot Restart (`R`) après avoir modifié `main.dart` ou les constructeurs.
 
-## 📖 Ressources d'apprentissage Flutter
+## Ressources d'apprentissage Flutter
 
 - [Documentation officielle Flutter](https://docs.flutter.dev/)
 - [Flutter Widget Catalog](https://docs.flutter.dev/ui/widgets)
 - [Dart Language Tour](https://dart.dev/guides/language/language-tour)
 - [Flutter Cookbook](https://docs.flutter.dev/cookbook)
 
-## 🤝 Contribution
+## Contribution
 
 N'hésite pas à expérimenter avec le code :
 1. Ajoute de nouvelles fonctionnalités (historique des calculs, graphiques, etc.)
@@ -184,10 +184,10 @@ N'hésite pas à expérimenter avec le code :
 3. Ajoute la persistance des données (shared_preferences, sqflite)
 4. Implémente l'internationalisation (support multilingue)
 
-## 📝 Licence
+## Licence
 
 Projet éducatif - Libre d'utilisation et de modification.
 
 ---
 
-**Bon apprentissage Flutter ! 🎉**
+Bon apprentissage Flutter !
