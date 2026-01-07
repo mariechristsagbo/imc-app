@@ -1,16 +1,193 @@
-# imc_app
+# 📱 Application Calculateur d'IMC (BMI Calculator)
 
-A new Flutter project.
+Application Flutter pour calculer l'Indice de Masse Corporelle (IMC/BMI) avec une interface moderne et intuitive.
 
-## Getting Started
+## 📸 Captures d'écran
 
-This project is a starting point for a Flutter application.
+L'application comprend deux écrans principaux :
+1. **Écran de saisie** : Sélection du sexe, taille (slider), poids et âge (compteurs)
+2. **Écran de résultat** : Affichage de l'IMC calculé avec interprétation colorée
 
-A few resources to get you started if this is your first Flutter project:
+![alt text](image.png)
+![alt text](image-1.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🎯 Fonctionnalités
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- ✅ Sélection du sexe (Homme/Femme)
+- ✅ Slider interactif pour la taille (120-220 cm)
+- ✅ Compteurs +/- pour le poids (30-200 kg) et l'âge (10-100 ans)
+- ✅ Calcul automatique de l'IMC selon la formule : **IMC = poids(kg) / taille²(m)**
+- ✅ Interprétation du résultat :
+  - **IMC ≤ 18.5** : Sous-poids (bleu)
+  - **18.5 < IMC < 25** : Poids normal (vert)
+  - **IMC ≥ 25** : Surpoids (orange)
+- ✅ Navigation fluide entre les écrans
+- ✅ Design moderne avec thème sombre
+
+## 🏗️ Architecture du projet
+
+```
+lib/
+├── main.dart                    # Point d'entrée de l'application
+├── models/
+│   └── imc_calculator.dart     # Logique métier (calculs IMC)
+├── screens/
+│   ├── home_screen.dart        # Écran principal (saisie)
+│   └── result_screen.dart      # Écran de résultat
+├── widgets/
+│   ├── custom_button.dart      # Bouton personnalisé
+│   ├── gender_content.dart     # Widget icône + label sexe
+│   ├── reusable_card.dart      # Carte réutilisable
+│   └── round_icon_button.dart  # Boutons circulaires +/-
+└── utils/
+    └── constants.dart          # Constantes (couleurs, styles)
+```
+
+## 📚 Concepts Flutter explorés
+
+### 1. **Widgets de base**
+- `StatelessWidget` : Widget immuable (ne change pas)
+- `StatefulWidget` : Widget avec état modifiable
+- `Scaffold` : Structure de base d'un écran Material Design
+
+### 2. **Gestion d'état**
+- `setState()` : Méthode pour notifier Flutter qu'une donnée a changé
+- Variables d'état dans `State<T>` : `selectedGender`, `height`, `weight`, `age`
+
+### 3. **Layout & Positionnement**
+- `Column` & `Row` : Organisation verticale/horizontale des widgets
+- `Expanded` : Permet à un widget de prendre tout l'espace disponible
+- `Container` : Widget flexible pour styliser et positionner
+- `Padding` & `Margin` : Espacements internes et externes
+
+### 4. **Interactivité**
+- `GestureDetector` : Détection des gestes (tap, swipe, etc.)
+- `Slider` : Widget pour sélectionner une valeur dans un intervalle
+- `onPressed` / `onTap` callbacks : Réactions aux interactions utilisateur
+
+### 5. **Navigation**
+- `Navigator.push()` : Naviguer vers un nouvel écran
+- `Navigator.pop()` : Retourner à l'écran précédent
+- `MaterialPageRoute` : Transition animée entre écrans
+
+### 6. **Theming**
+- `ThemeData` : Configuration globale du thème
+- `TextStyle` : Personnalisation du texte (taille, poids, couleur)
+- Couleurs personnalisées avec `Color(0xFFRRGGBB)`
+
+### 7. **Widgets personnalisés**
+- Création de widgets réutilisables (`ReusableCard`, `GenderContent`)
+- Paramètres `required` et optionnels (`?`)
+- Constructeurs `const` pour optimiser les performances
+
+### 8. **Séparation des responsabilités**
+- **Models** : Logique métier pure (calculs)
+- **Widgets** : Composants UI réutilisables
+- **Screens** : Pages complètes de l'application
+- **Utils** : Constantes et helpers
+
+## 🚀 Installation et lancement
+
+### Prérequis
+- Flutter SDK ≥ 3.10.1
+- Dart SDK (inclus avec Flutter)
+- Un IDE (VS Code, Android Studio) ou éditeur de texte
+
+### Étapes
+
+1. **Cloner le projet**
+   ```bash
+   git clone <url-du-repo>
+   cd imc_app
+   ```
+
+2. **Installer les dépendances**
+   ```bash
+   flutter pub get
+   ```
+
+3. **Vérifier qu'aucune erreur n'est présente**
+   ```bash
+   flutter analyze
+   ```
+
+4. **Lancer l'application**
+   
+   Sur un émulateur/simulateur déjà lancé :
+   ```bash
+   flutter run
+   ```
+   
+   Sur un appareil physique connecté :
+   ```bash
+   flutter devices  # Liste les appareils disponibles
+   flutter run -d <device-id>
+   ```
+
+5. **Hot Reload** (pendant l'exécution)
+   - Appuyez sur `r` dans le terminal pour recharger l'app
+   - Appuyez sur `R` pour un restart complet
+   - Appuyez sur `q` pour quitter
+
+## 🧪 Tests
+
+Lancer les tests unitaires et widget :
+```bash
+flutter test
+```
+
+## 📦 Dépendances
+
+- `flutter` : Framework Flutter
+- `cupertino_icons` : Icônes iOS
+- `font_awesome_flutter` : Icônes Font Awesome (symboles ♂️ ♀️ et +/-)
+
+## 🎨 Personnalisation
+
+### Modifier les couleurs
+Éditez `lib/utils/constants.dart` :
+```dart
+const kBackgroundColor = Color(0xFF0A0E21);  // Fond principal
+const kPrimaryButtonColor = Color(0xFFEB1555); // Bouton Calculate
+```
+
+### Ajuster les limites
+```dart
+const double kMinHeight = 120.0;  // Taille minimale
+const double kMaxHeight = 220.0;  // Taille maximale
+const int kMinWeight = 30;        // Poids minimal
+```
+
+## 🐛 Débogage courant
+
+### Problème : "Multiple Dart VM instances..."
+**Solution** : Arrêtez tous les processus Flutter en cours (`q` dans tous les terminaux).
+
+### Problème : Overflow errors
+**Solution** : Ces avertissements apparaissent dans les tests à petite résolution. Sur un vrai appareil, l'app fonctionne correctement.
+
+### Problème : Hot reload ne fonctionne pas
+**Solution** : Utilisez Hot Restart (`R`) après avoir modifié `main.dart` ou les constructeurs.
+
+## 📖 Ressources d'apprentissage Flutter
+
+- [Documentation officielle Flutter](https://docs.flutter.dev/)
+- [Flutter Widget Catalog](https://docs.flutter.dev/ui/widgets)
+- [Dart Language Tour](https://dart.dev/guides/language/language-tour)
+- [Flutter Cookbook](https://docs.flutter.dev/cookbook)
+
+## 🤝 Contribution
+
+N'hésite pas à expérimenter avec le code :
+1. Ajoute de nouvelles fonctionnalités (historique des calculs, graphiques, etc.)
+2. Améliore le design (animations, transitions)
+3. Ajoute la persistance des données (shared_preferences, sqflite)
+4. Implémente l'internationalisation (support multilingue)
+
+## 📝 Licence
+
+Projet éducatif - Libre d'utilisation et de modification.
+
+---
+
+**Bon apprentissage Flutter ! 🎉**
