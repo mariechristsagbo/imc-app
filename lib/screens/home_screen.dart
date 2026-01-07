@@ -23,7 +23,7 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-/// 📚 CONCEPT: State Class
+/// 📚 CONCEPT: State Classl
 /// Contient les données changeantes (state) du widget
 class _HomeScreenState extends State<HomeScreen> {
   // ========== VARIABLES D'ÉTAT ==========
