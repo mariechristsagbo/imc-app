@@ -8,7 +8,7 @@ L'application comprend deux écrans principaux :
 1. **Écran de saisie** : Sélection du sexe, taille (slider), poids et âge (compteurs)
 2. **Écran de résultat** : Affichage de l'IMC calculé avec interprétation colorée
 
-![alt text](image.png)
+![alt text](image-2.png)
 ![alt text](image-1.png)
 
 ## 🎯 Fonctionnalités
