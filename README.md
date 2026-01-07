@@ -43,48 +43,6 @@ lib/
     └── constants.dart          # Constantes (couleurs, styles)
 ```
 
-## Concepts Flutter explorés
-
-### 1. **Widgets de base**
-- `StatelessWidget` : Widget immuable (ne change pas)
-- `StatefulWidget` : Widget avec état modifiable
-- `Scaffold` : Structure de base d'un écran Material Design
-
-### 2. **Gestion d'état**
-- `setState()` : Méthode pour notifier Flutter qu'une donnée a changé
-- Variables d'état dans `State<T>` : `selectedGender`, `height`, `weight`, `age`
-
-### 3. **Layout & Positionnement**
-- `Column` & `Row` : Organisation verticale/horizontale des widgets
-- `Expanded` : Permet à un widget de prendre tout l'espace disponible
-- `Container` : Widget flexible pour styliser et positionner
-- `Padding` & `Margin` : Espacements internes et externes
-
-### 4. **Interactivité**
-- `GestureDetector` : Détection des gestes (tap, swipe, etc.)
-- `Slider` : Widget pour sélectionner une valeur dans un intervalle
-- `onPressed` / `onTap` callbacks : Réactions aux interactions utilisateur
-
-### 5. **Navigation**
-- `Navigator.push()` : Naviguer vers un nouvel écran
-- `Navigator.pop()` : Retourner à l'écran précédent
-- `MaterialPageRoute` : Transition animée entre écrans
-
-### 6. **Theming**
-- `ThemeData` : Configuration globale du thème
-- `TextStyle` : Personnalisation du texte (taille, poids, couleur)
-- Couleurs personnalisées avec `Color(0xFFRRGGBB)`
-
-### 7. **Widgets personnalisés**
-- Création de widgets réutilisables (`ReusableCard`, `GenderContent`)
-- Paramètres `required` et optionnels (`?`)
-- Constructeurs `const` pour optimiser les performances
-
-### 8. **Séparation des responsabilités**
-- **Models** : Logique métier pure (calculs)
-- **Widgets** : Composants UI réutilisables
-- **Screens** : Pages complètes de l'application
-- **Utils** : Constantes et helpers
 
 ## Installation et lancement
 
