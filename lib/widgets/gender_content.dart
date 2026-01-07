@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/constants.dart';
 
-/// 📚 CONCEPT FLUTTER: Custom Widget
-/// Widget personnalisé pour afficher l'icône et le label du sexe
-
 class GenderContent extends StatelessWidget {
   const GenderContent({
     super.key,
@@ -16,8 +13,6 @@ class GenderContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /// 📚 CONCEPT FLUTTER: Column
-    /// Column arrange les widgets verticalement
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -26,7 +21,7 @@ class GenderContent extends StatelessWidget {
           size: kIconSize,
           color: kTextColor,
         ),
-        const SizedBox(height: 15.0), // Espacement vertical
+        const SizedBox(height: 15.0),
         Text(
           label,
           style: kLabelTextStyle,

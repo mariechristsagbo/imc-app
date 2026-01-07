@@ -8,14 +8,6 @@ import '../widgets/round_icon_button.dart';
 import '../widgets/custom_button.dart';
 import 'result_screen.dart';
 
-/// 📚 CONCEPT FLUTTER: StatefulWidget
-/// Un StatefulWidget peut changer son état (state) au cours de sa vie.
-/// Parfait pour les formulaires, compteurs, etc.
-/// 
-/// Différence avec StatelessWidget:
-/// - StatelessWidget = immuable, ne change pas après construction
-/// - StatefulWidget = peut changer et se reconstruire avec setState()
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -23,11 +15,7 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-/// 📚 CONCEPT: State Classl
-/// Contient les données changeantes (state) du widget
 class _HomeScreenState extends State<HomeScreen> {
-  // ========== VARIABLES D'ÉTAT ==========
-  /// 📚 Ces variables stockent l'état actuel de l'application
   Gender? selectedGender; // Sexe sélectionné (peut être null au départ)
   double height = 150; // Taille en cm (valeur initiale)
   int weight = 60; // Poids en kg
@@ -35,9 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    /// 📚 CONCEPT FLUTTER: Scaffold
-    /// Structure de base d'un écran Material Design
-    /// Contient: AppBar, Body, FloatingActionButton, Drawer, etc.
     return Scaffold(
       appBar: AppBar(
         title: const Text('BMI CALCULATOR'),
@@ -47,18 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // ========== SECTION 1: SÉLECTION DU SEXE ==========
-          /// 📚 CONCEPT FLUTTER: Expanded
-          /// Expanded fait qu'un widget prend tout l'espace disponible
-          /// Utilise flex pour définir les proportions
           Expanded(
             child: Row(
               children: [
-                // Carte MALE
                 Expanded(
                   child: ReusableCard(
-                    /// 📚 CONCEPT: Opérateur ternaire
-                    /// condition ? valeurSiVrai : valeurSiFaux
                     colour: selectedGender == Gender.male
                         ? kActiveColor
                         : kInactiveColor,
@@ -67,16 +45,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       label: 'MALE',
                     ),
                     onPress: () {
-                      /// 📚 CONCEPT FLUTTER: setState()
-                      /// setState() notifie Flutter qu'une donnée a changé
-                      /// et déclenche un rebuild du widget
                       setState(() {
                         selectedGender = Gender.male;
                       });
                     },
                   ),
                 ),
-                // Carte FEMALE
                 Expanded(
                   child: ReusableCard(
                     colour: selectedGender == Gender.female
@@ -97,7 +71,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          // ========== SECTION 2: SLIDER DE TAILLE ==========
           Expanded(
             child: ReusableCard(
               colour: kActiveColor,
@@ -123,8 +96,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  /// 📚 CONCEPT FLUTTER: Slider
-                  /// Widget interactif pour sélectionner une valeur dans un intervalle
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.white,
@@ -154,11 +125,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          // ========== SECTION 3: POIDS ET ÂGE ==========
           Expanded(
             child: Row(
               children: [
-                // Carte WEIGHT
                 Expanded(
                   child: ReusableCard(
                     colour: kActiveColor,
@@ -176,7 +145,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            // Bouton -
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
@@ -186,7 +154,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               },
                             ),
                             const SizedBox(width: 10.0),
-                            // Bouton +
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
@@ -201,7 +168,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                // Carte AGE
                 Expanded(
                   child: ReusableCard(
                     colour: kActiveColor,
@@ -246,19 +212,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          // ========== BOUTON CALCULATE ==========
           CustomButton(
             buttonTitle: 'CALCULATE',
             onTap: () {
-              // Calculer l'IMC
               double imc = IMCCalculator.calculateIMC(
                 height: height,
                 weight: weight.toDouble(),
               );
 
-              /// 📚 CONCEPT FLUTTER: Navigation
-              /// Navigator.push() permet de naviguer vers un nouvel écran
-              /// Il empile le nouvel écran sur l'ancien (comme une pile de cartes)
               Navigator.push(
                 context,
                 MaterialPageRoute(
